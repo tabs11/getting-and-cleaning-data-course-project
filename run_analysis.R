@@ -13,7 +13,7 @@ if (!file.exists("UCI HAR Dataset")) {
 ##colnames for features
 features <- read.table("UCI HAR Dataset/features.txt")
 
-#proper labels of activities
+#proper labels for activities
 activities <- read.table("UCI HAR Dataset/activity_labels.txt")
 
 ##read and row binding of the training and the test data sets to create one data set.
