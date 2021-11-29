@@ -1,3 +1,4 @@
+setwd("C:/Users/numartin/Desktop/Coursera/Data Science R/Getting and Cleaning Data/Week4/")
 library(dplyr)
 library(data.table)
 
