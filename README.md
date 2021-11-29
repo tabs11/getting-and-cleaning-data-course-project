@@ -60,7 +60,7 @@ To run **run_analysis.R** script, the bellow packages are needed:
 
 Since we know that the number of files and their structure are identical in both directories a loop can be applied to go through each directory, read all the files and bind the rows of each data set type present in both train and test directories. Also include an additional column to distinguish which rows are from train and from test data sets and set the correct column names.
 
-#### 3.4 Merges by columnall the data sets (*X,y and subject*) . 
+#### 3.4 Merge all the columns of the data sets (*X,y and subject*) . 
 
 The row binding of train and test datas was already done in the previous step. Next step is merge the three data sets by column. 
 
