@@ -36,7 +36,7 @@ colnames(train_test_data$y)[1]<-'Activity'
 ##column binding
 merged_data<-cbind(train_test_data$subject,train_test_data$X,train_test_data$y)
 
-##xtracts only the measurements on the mean and standard deviation for each measurement. 
+##extracts only the measurements on the mean and standard deviation for each measurement. 
 tidy_data<-merged_data %>% select(Subject,Activity,contains("mean"),contains("std"))
 ##atribute the readble classes to activities
 levels(tidy_data$Activity)<-activities$V2
