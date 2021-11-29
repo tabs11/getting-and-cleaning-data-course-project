@@ -16,7 +16,7 @@ features <- read.table("UCI HAR Dataset/features.txt")
 #proper labels for activities
 activities <- read.table("UCI HAR Dataset/activity_labels.txt")
 
-##read and row binding of the training and the test data sets.
+##read and row binding the training and the test data sets.
 train_test_data=list("a","b","c")
 filenames<-list.files('./UCI HAR Dataset/train',pattern='.txt$')
 names(train_test_data)<-sub("_.*", "", filenames)
