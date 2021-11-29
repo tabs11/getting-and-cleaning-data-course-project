@@ -59,7 +59,7 @@ activities <- read.table("UCI HAR Dataset/activity_labels.txt")
 #### 3.2 Read train and test data sets
 *train* directory:
         
-        1. *X_train.txt* - features measured for training
+1. *X_train.txt* - features measured for training
 
 2. *y_train.txt* - encoded activity type for training
 
@@ -67,7 +67,7 @@ activities <- read.table("UCI HAR Dataset/activity_labels.txt")
 
 *test* directory: 
         
-        1. *X_test.txt* - features measured for testing
+1. *X_test.txt* - features measured for testing
 
 2. *y_test.txt* - encoded activity type for testing
 
