@@ -10,7 +10,7 @@ if(!file.exists("prog_assing_week4_data.zip")){
 if (!file.exists("UCI HAR Dataset")) { 
         unzip('prog_assing_week4_data.zip') 
 }
-##colnames of features
+##colnames for features
 features <- read.table("UCI HAR Dataset/features.txt")
 
 #proper labels of activities
