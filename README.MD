@@ -27,7 +27,7 @@ To run **run_analysis.R** script, the bellow packages are needed:
 
 #### **1. Load the needed packages**
 
-#### **2. Download and unzip the data file**
+#### **2. Download and unzip the data folder**
 #### 2.1 Checks if the data file exists, if not then download it.
 
 #### 2.2 Check if the downloaded data file is unzipped, if not unzip it. After that all the content will be in "UCI HAR Dataset" directory.
