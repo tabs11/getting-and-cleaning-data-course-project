@@ -18,7 +18,7 @@ README
 
 To run **run_analysis.R** script, the bellow packages are needed:
         
-        1. dplyr - `install.packages("dplyr")`
+1. dplyr - `install.packages("dplyr")`
 2. data.table - `install.packages("data.table")`
 
 
