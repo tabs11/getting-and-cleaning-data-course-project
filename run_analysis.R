@@ -1,13 +1,12 @@
 library(dplyr)
 library(data.table)
-setwd("C:/Users/numartin/Desktop/Coursera/Data Science R/Getting and Cleaning Data/Week4/")
 
-##data download
+##download data
 if(!file.exists("prog_assing_week4_data.zip")){
         fileUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
         download.file(fileUrl,destfile="prog_assing_week4_data.zip",method="curl")
 }
-# Checking if folder exists
+# Checking if folder exists and unzip the content
 if (!file.exists("UCI HAR Dataset")) { 
         unzip('prog_assing_week4_data.zip') 
 }
@@ -15,7 +14,7 @@ if (!file.exists("UCI HAR Dataset")) {
 features <- read.table("UCI HAR Dataset/features.txt")
 
 #proper labels of activities
-activities <- read.table("UCI HAR Dataset/activity_labels.txt")#, col.names = c("y", "activity"))
+activities <- read.table("UCI HAR Dataset/activity_labels.txt")
 
 ##Merges the training and the test sets to create one data set.
 train_test_data=list("a","b","c")
@@ -41,11 +40,8 @@ tidy_data<-merged_data %>% select(Subject,y,contains("mean"),contains("std"))
 ##atribute the readble classes to activities
 levels(tidy_data$y)<-activities$V2
 colnames(tidy_data)[2] <- 'Activity'
-#tidy_data<-merge(activities,tidy_data,by="y")[,-1]
-#tidy_data_activ<-tidy_data_activ[,c(3,2,4:ncol(tidy_data_activ))]
 
-##independent tidy data set with the average of each variable for each activity and each subject.
-
+##aggregated tidy data set with the average of each variable for each activity and each subject.
 tidy_data_agg_mean<-tidy_data %>% 
         group_by(Subject,Activity) %>%
         summarise_all(mean,na.rm=T)
@@ -56,8 +52,6 @@ names(tidy_data_agg_mean)<-gsub("\\(", "", names(tidy_data_agg_mean))
 names(tidy_data_agg_mean)<-gsub("\\)", "", names(tidy_data_agg_mean))
 names(tidy_data_agg_mean)<-gsub("^t", "time", names(tidy_data_agg_mean))
 names(tidy_data_agg_mean)<-gsub("^f", "frequency", names(tidy_data_agg_mean))
-
-str(tidy_data_agg_mean)
 
 write.table(tidy_data_agg_mean, file="tidy_data_agg_mean.txt", row.names = FALSE)
 
