@@ -80,7 +80,7 @@ The sensor signals (accelerometer and gyroscope) were pre-processed by applying 
 
 ### subject
 
-Person subject ID
+Person subject ID (1 to 30)
 
 ### activity
 Type of activity - "WALKING","WALKING_UPSTAIRS", "WALKING_DOWNSTAIRS", "SITTING"", "STANDING"" or "LAYING"
