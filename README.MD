@@ -95,7 +95,7 @@ colnames(train_test_data$y)[1]<-'y'
 }
 ```
 
-#### 3.3 Merges the training and the test sets to create one data set. The row binding of train and test datas etswas already done in the previous step. Now we need to merge the three data sets by column. 
+#### 3.3 Merges the training and the test sets to create one data set. The row binding of train and test datas was already done in the previous step. Now we need to merge the three data sets by column. 
 ```r
 merged_data<-cbind(train_test_data$subject,train_test_data$X,train_test_data$y)
 
