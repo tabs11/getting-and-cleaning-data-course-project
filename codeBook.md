@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Codebook
 
 ## Human Activity Recognition Using Smartphones Data Set 
@@ -113,5 +113,6 @@ Meaning of the content in variable names:
 11. **Z** - measurement was taken in "Z" dimension
 
 11. **mean()** - average of measurement
+
 12. **std()** - standard deviation of the measurement
->>>>>>> 5e9c27ee2df050dfd1644354801fcfd55d26e380
+
