@@ -16,7 +16,7 @@ features <- read.table("UCI HAR Dataset/features.txt")
 #proper labels of activities
 activities <- read.table("UCI HAR Dataset/activity_labels.txt")
 
-##read and row binding of the training and the test sets to create one data set.
+##read and row binding of the training and the test data sets to create one data set.
 train_test_data=list("a","b","c")
 filenames<-list.files('./UCI HAR Dataset/train',pattern='.txt$')
 names(train_test_data)<-sub("_.*", "", filenames)
@@ -31,16 +31,15 @@ for (files in 1:length(filenames)){
 }
 colnames(train_test_data$subject)[1]<-'Subject'
 colnames(train_test_data$X)[-length(colnames(train_test_data$X))]<-features$V2
-colnames(train_test_data$y)[1]<-'y'
+colnames(train_test_data$y)[1]<-'Activity'
 
 ##column binding
 merged_data<-cbind(train_test_data$subject,train_test_data$X,train_test_data$y)
 
 ##xtracts only the measurements on the mean and standard deviation for each measurement. 
-tidy_data<-merged_data %>% select(Subject,y,contains("mean"),contains("std"))
+tidy_data<-merged_data %>% select(Subject,Activity,contains("mean"),contains("std"))
 ##atribute the readble classes to activities
-levels(tidy_data$y)<-activities$V2
-colnames(tidy_data)[2] <- 'Activity'
+levels(tidy_data$Activity)<-activities$V2
 
 ##aggregated tidy data set with the average of each variable for each activity and each subject.
 tidy_data_agg_mean<-tidy_data %>% 
