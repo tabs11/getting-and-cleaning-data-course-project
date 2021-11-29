@@ -16,7 +16,7 @@ features <- read.table("UCI HAR Dataset/features.txt")
 #proper labels of activities
 activities <- read.table("UCI HAR Dataset/activity_labels.txt")
 
-##read and Merge the training and the test sets to create one data set.
+##read and row binding of the training and the test sets to create one data set.
 train_test_data=list("a","b","c")
 filenames<-list.files('./UCI HAR Dataset/train',pattern='.txt$')
 names(train_test_data)<-sub("_.*", "", filenames)
