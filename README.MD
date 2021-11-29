@@ -101,11 +101,11 @@ merged_data<-cbind(train_test_data$subject,train_test_data$X,train_test_data$y)
 
 ```
 
-#### ** 4. Next we should extract only the measurements on the mean and standard deviation for each measurement.**
+#### **4. Next we should extract only the measurements on the mean and standard deviation for each measurement.**
 ```r
 tidy_data<-merged_data %>% select(Subject,y,contains("mean"),contains("std"))
 ```
-#### ** 5. We should also use descriptive activity names to name the activities in the data set. we can do it by re-level the *y* field with the labels in *"activity_labels.txt"* **
+#### **5. We should also use descriptive activity names to name the activities in the data set. we can do it by re-level the *y* field with the labels in *"activity_labels.txt"* **
 ```r
 levels(tidy_data$y)<-activities$V2
 colnames(tidy_data)[2] <- 'Activity'
